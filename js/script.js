@@ -37,12 +37,38 @@ function getBiggestWord(text) {
 
 console.log(getBiggestWord("quand le corps se réveille, l'Esprit se rappelle ce qu'il a appris"));
 
+
 // -----------------------------------
 console.log("3/ Implémentez une fonction qui converti un nombre de seconde en un tableau exprimant cette durée en secondes, minutes, heures, jours, semaines et années.");
 
 
+function convertSeconds(seconds) {
+    
+    const durations = [];
 
-console.log();
+    durations.push(`${seconds % 60} secondes`);
+     
+    seconds = Math.floor(seconds / 60);
+    durations.push(`${seconds % 60} minutes`);
+
+    seconds = Math.floor(seconds / 60);
+    durations.push(`${seconds % 24} heures`);
+
+    seconds = Math.floor(seconds / 24);
+      durations.push(`${seconds % 7} jours`);
+
+    seconds = Math.floor(seconds / 7);
+    durations.push(`${seconds % 52} mois`);
+
+    seconds = Math.floor(seconds / 52);
+    durations.push(`${seconds / 52} années`);
+
+
+    return durations.reverse()
+}
+
+console.log(convertSeconds(1234567));
+console.log(convertSeconds(12345));
 
 
 // -----------------------------------
