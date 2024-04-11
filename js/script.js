@@ -1,7 +1,22 @@
 // -----------------------------------
 console.log("1/ Implémentez une fonction qui transforme un texte en camelCase.");
 
-console.log();
+function getCamelCase(text) {
+
+    const words = text.split(' ');
+
+    let camelCase = words[0].toLowerCase();
+
+    for (let i = 1; i < words.length; i++) {
+        camelCase += words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+    }
+
+    return camelCase;
+}
+
+
+console.log(getCamelCase("de l'ordre nait le chaos et du chaos  naît l'ordre"));
+
 
 // -----------------------------------
 console.log("2/ Implémentez une fonction qui retroune le plus grand mot d'un texte.");
@@ -31,7 +46,7 @@ console.log();
 // -----------------------------------
 console.log("7/ Retournez la liste des prenoms des joueurs ci-dessous par ordre de score décroissant.");
 
-const players  = {
+const players = {
     Camille: 88,
     Lola: 125,
     Isaac: 174,
