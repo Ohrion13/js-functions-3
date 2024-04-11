@@ -14,19 +14,36 @@ function getCamelCase(text) {
     return camelCase;
 }
 
-
 console.log(getCamelCase("de l'ordre nait le chaos et du chaos  naît l'ordre"));
 
 
 // -----------------------------------
 console.log("2/ Implémentez une fonction qui retroune le plus grand mot d'un texte.");
 
-console.log();
+function getBiggestWord(text) {
+
+    const words = text.split(' ');
+    let biggestWord = "";
+
+    for (let i = 0; i < words.length; i++) {
+
+        if (words[i].length > biggestWord.length) {
+            biggestWord = words[i];
+        }
+    }
+
+    return biggestWord;
+}
+
+console.log(getBiggestWord("quand le corps se réveille, l'Esprit se rappelle ce qu'il a appris"));
 
 // -----------------------------------
 console.log("3/ Implémentez une fonction qui converti un nombre de seconde en un tableau exprimant cette durée en secondes, minutes, heures, jours, semaines et années.");
 
+
+
 console.log();
+
 
 // -----------------------------------
 console.log("4/ Implémentez une fonction qui prend en paramètre un tableau retourné par la fonction précédente et retourne la chaîne de caractère correspondante.");
